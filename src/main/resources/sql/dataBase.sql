@@ -1,0 +1,2 @@
+CREATE DATABASE Endava_db;
+DROP DATABASE Endava_db;
