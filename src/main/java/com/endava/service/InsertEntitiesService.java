@@ -76,17 +76,20 @@ public class InsertEntitiesService {
         List<Task> tasks = Factories.tasksFactory();
         taskRepository.saveAll(tasks);
 
+
+        List<User> usersAfterUpdate = userRepository.findAll();
+
         Task task1 = tasks.get(0);
-        task1.setAssignee(users.get(0));
+        task1.setAssignee(usersAfterUpdate.get(0));
 
         Task task2 = tasks.get(1);
-        task2.setAssignee(users.get(1));
+        task2.setAssignee(usersAfterUpdate.get(1));
 
         Task task3 = tasks.get(2);
-        task3.setAssignee(users.get(2));
+        task3.setAssignee(usersAfterUpdate.get(2));
 
         Task task4 = tasks.get(3);
-        task4.setAssignee(users.get(3));
+        task4.setAssignee(usersAfterUpdate.get(3));
 
         taskRepository.saveAll(tasks);
 
