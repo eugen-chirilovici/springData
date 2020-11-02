@@ -23,4 +23,9 @@ public class UserService {
                                                                     pageContainer.getSort()));
         return userPage.toList();
     }
+
+    public User getUser() {
+        return userRepository.getOne(1L);
+    }
+
 }

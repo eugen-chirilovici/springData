@@ -1,6 +1,7 @@
 package com.endava.service;
 
 import com.endava.containers.PageRequestContainer;
+import com.endava.entity.Task;
 import com.endava.entity.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Sort;
@@ -19,6 +20,9 @@ public class MainService {
 
     private final UserService userService;
 
+    private final TaskService taskService;
+
+
     @PostConstruct
     void letsGo() {
         insertEntitiesService.insertEntities();
@@ -28,7 +32,11 @@ public class MainService {
         List<User> usersPage2 = userService.getUsersPage(new PageRequestContainer(1, 2,
                                                                                   getSortField(User.class)));
 
+        List<Task> tasks = taskService.selectTasksByNameStartWith("Create");
 
+        List<Task> task2 = taskService.getAllByNameStartingWith("Create");
+
+        Task create = taskService.getTaskByNameStartingWithAndAssignee("Create", userService.getUser());
     }
 
 }

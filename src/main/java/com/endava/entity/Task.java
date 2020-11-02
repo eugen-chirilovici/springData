@@ -26,7 +26,7 @@ public class Task extends AbstractEntityId{
     @Enumerated(EnumType.STRING)
     private Status status;
 
-    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")
     private User assignee;
 
