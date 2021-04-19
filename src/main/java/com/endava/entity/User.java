@@ -1,5 +1,6 @@
 package com.endava.entity;
 
+import com.endava.entity.annotations.SortPageField;
 import lombok.*;
 
 import javax.persistence.*;
@@ -19,6 +20,7 @@ public class User extends AbstractEntityId{
 
     private String lName;
 
+    @SortPageField
     private String email;
 
     private String userName;
