@@ -53,7 +53,7 @@ public class Factories {
                     .build());
 
             add(Task.builder()
-                    .name("Create Body")
+                    .name("Create Header")
                     .description("Create body of the site")
                     .startDate(LocalDate.of(2020, 4, 5))
                     .endDate(LocalDate.of(2020, 6, 10))
